@@ -33,7 +33,7 @@ class StoreAppointmentRequest extends FormRequest
             'product_category_id'=> 'required|exists:product_category,id',
             'product_id'=>'required|exists:product,id',
             'date_appointment' => 'required|date|after_or_equal:today',
-            // 'time_appointment' => 'required|date_format:H:i:s|between:08:00:00,18:00:00',
+            'time_appointment' => 'required',
             'total_price'=>'required|numeric|integer|min:0',
             'status'=>'required|integer|in:1,2,3',
             'pay_by'=>'required|integer|in:0,1,2',
@@ -77,7 +77,7 @@ class StoreAppointmentRequest extends FormRequest
             'date_appointment.date' => 'Please enter a valid date format.',
             'date_appointment.after_or_equal' => 'The appointment date must be equal to or after today.',
 
-            // 'time_appointment.required' => 'Please enter a time for the appointment.',
+            'time_appointment.required' => 'Please enter a time for the appointment.',
             // 'time_appointment.date_format' => 'Please enter a valid time in the format HH:MM.',
             // 'time_appointment.between' => 'The appointment time must be between 08:00 and 18:00.',
 
