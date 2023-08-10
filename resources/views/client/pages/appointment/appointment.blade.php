@@ -135,7 +135,7 @@
                             <label><i class="calendar alternate outline icon"></i> Date: </label>
                             <input type="text" id="datepicker" name="date_appointment">
                             <label><i class="clock outline icon"></i>Time: </label>
-                            <input type="time" id="time_appointment" name="time_appointment" step="3600" min="08:00" max="18:00">
+                            <input type="time" id="time_appointment" name="time_appointment" min="08:00" max="18:00">
                             {{-- <input type="time" id="time_appointment" name="time_appointment"> --}}
                         </div>
                         @error('date_appointment')

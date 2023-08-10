@@ -25,7 +25,7 @@ class StoreProductRequest extends FormRequest
             'name_product'=> 'required|min:1|max:255|string|unique:product,name_product',
             'slug'=> 'required|alpha_dash',
             'product_category_id' => 'required|exists:product_category,id',
-            'price'=> 'required|numeric|integer|gt:0',
+            'price'=> 'required|numeric|regex:/^\d{1,11}$/',
             'made_in'=> 'required|min:1|max:255|string',
             'short_description'=> 'required|min:1|max:255|string',
             'description'=> 'required|min:10',
@@ -54,8 +54,7 @@ class StoreProductRequest extends FormRequest
 
             'price.required' => 'The price field is required.',
             'price.numeric' => 'The price must be a number.',
-            'price.integer' => 'The price must be an integer.',
-            'price.gt' => 'The price must be greater than 0.',
+            'price.regex' => 'The price must be a decimal number with up to 11 digits.',
 
             'made_in.required' => 'The made in field is required.',
             'made_in.min' => 'The made in must have at least :min character.',

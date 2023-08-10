@@ -24,7 +24,7 @@ class UpdateServiceRequest extends FormRequest
         return [
             'name'=> 'required|min:1|max:255|string|unique:service,name,'.$this->id,
             'slug'=> 'required|alpha_dash',
-            'price'=> 'required|numeric|gt:0',
+            'price'=> 'required|numeric|regex:/^\d{1,11}$/',
             'short_description'=> 'required|min:1|max:255|string',
             'description'=> 'required|min:10',
             'status'=> 'required|boolean',
@@ -46,7 +46,7 @@ class UpdateServiceRequest extends FormRequest
 
             'price.required' => 'The price field is required.',
             'price.numeric' => 'The price must be a number.',
-            'price.gt' => 'The price must be greater than 0.',
+            'price.regex' => 'The price must be a decimal number with up to 11 digits.',
 
             'short_description.required' => 'The short description field is required.',
             'short_description.min' => 'The short description must have at least :min character.',

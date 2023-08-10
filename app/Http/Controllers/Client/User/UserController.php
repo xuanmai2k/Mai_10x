@@ -32,7 +32,7 @@ class UserController extends Controller
         if(!is_null( $id )){
             $filter[]=['users_id', $id];
         }
-        $bookingList = Appointment::where($filter)->orderBy('date_appointment','desc')->paginate(config('myconfig.item_per_page'));
+        $bookingList = Appointment::where($filter)->orderBy('date_appointment','asc')->paginate(config('myconfig.item_per_page'));
         return view('client.pages.user.account', compact('bookingList','url_canonical'));
     }
 

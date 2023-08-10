@@ -34,7 +34,7 @@ return new class extends Migration
             $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');
             $table->date('date_appointment')->nullable();
             $table->time('time_appointment')->nullable();
-            $table->decimal('total_price')->unsigned()->nullable();
+            $table->decimal('total_price',11,0)->unsigned()->nullable();
             $table->integer('status')->default(1)->nullable();//1 book, 2 used, 3 cancel
             $table->integer('pay_by')->default(0)->nullable();//0 hand, 1 momo, 2 vnpay
             $table->integer('rating')->unsigned()->nullable();

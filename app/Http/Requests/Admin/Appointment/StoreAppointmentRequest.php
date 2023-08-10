@@ -33,14 +33,14 @@ class StoreAppointmentRequest extends FormRequest
             'product_category_id'=> 'required|exists:product_category,id',
             'product_id'=>'required|exists:product,id',
             'date_appointment' => 'required|date|after_or_equal:today',
-            'time_appointment' => 'required',
-            'total_price'=>'required|numeric|integer|min:0',
+            'time_appointment' => 'required|date_format:H:i',
+            'total_price'=>'required|numeric|regex:/^\d{1,11}$/',
             'status'=>'required|integer|in:1,2,3',
             'pay_by'=>'required|integer|in:0,1,2',
             'rating' => 'numeric|min:0|max:5',
-            'comment'=> 'string|min=1',
+            'comment'=> 'string|min=1|max:255',
             'status_payment'=>'string|max:255',
-            'order_id'=>'integer',
+            'order_id'=>'integer|numeric',
         ];
     }
 
@@ -79,13 +79,11 @@ class StoreAppointmentRequest extends FormRequest
             'date_appointment.after_or_equal' => 'The appointment date must be equal to or after today.',
 
             'time_appointment.required' => 'Please enter a time for the appointment.',
-            // 'time_appointment.date_format' => 'Please enter a valid time in the format HH:MM.',
-            // 'time_appointment.between' => 'The appointment time must be between 08:00 and 18:00.',
+            'time_appointment.date_format' => 'Please enter a valid time in the format HH:MM.',
 
             'total_price.required' => 'The total price field is required.',
-            'total_price.numeric' => 'The total price must be a numeric value.',
-            'total_price.integer' => 'The total price must be an integer.',
-            'total_price.min' => 'The total price must be at least :min.',
+            'total_price.numeric' => 'The total price must be a number.',
+            'total_price.regex' => 'The total price must be a decimal number with up to 11 digits.',
 
             'status.required' => 'The status field is required.',
             'status.integer' => 'The status must be an integer.',
@@ -101,9 +99,13 @@ class StoreAppointmentRequest extends FormRequest
 
             'comment.string' => 'The comment field must be a string.',
             'comment.min' => 'The comment must have at least :min characters.',
+            'comment.max' => 'The comment may not exceed :max characters.',
 
             'status_payment.string' => 'The payment status field must be a string.',
             'status_payment.max' => 'The payment status may not be greater than :max characters.',
+
+            'order_id.integer' => 'Order ID must be an integer.',
+            'order_id.numeric' => 'Order ID must be a number.',
         ];
     }
 }
