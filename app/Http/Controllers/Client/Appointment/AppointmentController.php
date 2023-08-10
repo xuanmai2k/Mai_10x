@@ -78,6 +78,7 @@ class AppointmentController extends Controller
     {
         try{
             DB::beginTransaction();
+            $order_id = time();
             $check = Appointment::create([
                 'name'=> $request->name,
                 'email'=> $request->email,
@@ -93,7 +94,8 @@ class AppointmentController extends Controller
                 'total_price'=>$request->total_price,
                 'status'=>$request->status,
                 'pay_by'=>$request->pay_by,
-                'status_payment' => "Unpaid"
+                'status_payment' => "Unpaid",
+                'order_id' => $order_id
             ]);
             DB::commit();
             if($check->pay_by == 1){ // chuyển qua momo

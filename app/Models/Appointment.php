@@ -29,6 +29,7 @@ class Appointment extends Model
         'rating',
         'comment',
         'status_payment',
+        'order_id',
     ];
 
     public function product(){

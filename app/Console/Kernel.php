@@ -14,8 +14,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('app:overtime-appointment')
-        ->dailyAt('18:00')->timezone('Asia/Ho_Chi_Minh');
+        $schedule->command('app:overtime-appointment')->dailyAt('18:00')->timezone('Asia/Ho_Chi_Minh');
+        $schedule->command('app:remind-appointment')->dailyAt('8:00')->timezone('Asia/Ho_Chi_Minh');
+        // $schedule->command('app:save-record-remind-appointment')->dailyAt('3:00')->timezone('Asia/Ho_Chi_Minh');
     }
 
     /**

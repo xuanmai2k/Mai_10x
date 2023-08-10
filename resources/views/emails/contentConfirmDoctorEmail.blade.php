@@ -3,6 +3,7 @@
     <p style="color: #555; line-height: 1.5em;">The user has scheduled a vaccination appointment with you. {{ $appointment->category->name }} vaccines.</p>
     <h3 style="font-weight: bold; color: #333; margin-top: 30px; margin-bottom: 20px;">Order Details:</h3>
     <ul style="list-style: none; padding-left: 0;">
+        <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Order ID:</span> {{ $appointment->order_id }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Name:</span> {{ $appointment->name }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Phone:</span> {{ $appointment->phone }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Age:</span> {{ $appointment->age }}</li>

@@ -5,11 +5,13 @@ namespace App\Providers;
 use App\Events\AppointmentCancelEvent;
 use App\Events\AppointmentCompleteEvent;
 use App\Events\AppointmentSuccessEvent;
+use App\Events\RemindAppointmentEvent;
 use App\Listeners\ChangeStatusPaymentWhenAppointmentCancel;
 use App\Listeners\ChangeStatusWhenAppointmentCancel;
 use App\Listeners\ChangeStatusWhenAppointmentComplete;
 use App\Listeners\MinusQuantityProductWhenAppointmentSuccess;
 use App\Listeners\PlusQuantityProductWhenAppointmentCancel;
+use App\Listeners\SendEmailToCustomerForRemindingAppointment;
 use App\Listeners\SendEmailToCustomerWhenAppointmentCancel;
 use App\Listeners\SendEmailToCustomerWhenAppointmentComplete;
 use App\Listeners\SendEmailToCustomerWhenAppointmentSuccess;
@@ -60,6 +62,9 @@ class EventServiceProvider extends ServiceProvider
             SendEmailToNurseWhenAppointmentCancel::class,
             PlusQuantityProductWhenAppointmentCancel::class,
             // SendSmsToCustomerWhenAppointmentCancel::class,
+        ],
+        RemindAppointmentEvent::class => [
+            SendEmailToCustomerForRemindingAppointment::class,
         ]
     ];
 

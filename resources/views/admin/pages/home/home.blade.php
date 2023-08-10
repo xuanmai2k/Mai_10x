@@ -225,7 +225,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 stretch-card grid-margin"> <!--Doctor-->
+        <div class="col-md-6 stretch-card grid-margin">
             <div class="card">
                 <div class="card-body">
                     <p class="card-title">Complain Appointment</p>
@@ -238,7 +238,7 @@
                                 @endphp
                                 <img src="{{ asset('images/client/'.$imageLink) }}" alt="{{ $complain->user->name }}">
                                 <div>
-                                    <p ><span class="text-info mb-1">{{ $complain->user->name }}  </span><span class="mb-0" style="color:red">  (OrderID: {{ $complain->id }}) </span><small>{{ $complain->updated_at }}</small></p>
+                                    <p ><span class="text-info mb-1">{{ $complain->user->name }}  </span><span class="mb-0" style="color:red">  (OrderID: {{ $complain->order_id }}) </span><small>{{ $complain->updated_at }}</small></p>
                                     <p class="mb-0">Comment: {{ $complain->comment }}</p>
                                     <ul class="list-inline" style="display: flex;">
                                         <?php $rating = $complain->rating ?? 0; ?>

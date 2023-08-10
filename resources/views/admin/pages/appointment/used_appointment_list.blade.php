@@ -42,7 +42,7 @@
                                 @forelse ($appointmentList as $appointment)
                                 <tr>
                                     <td class="pl-0">{{ $loop->iteration }}</td>
-                                    <td>{{ $appointment->id }}</td>
+                                    <td>{{ $appointment->order_id }}</td>
                                     <td>{{ $appointment->name }}</td>
                                     <td>{{ $appointment->phone }}</td>
                                     <td>{{ $appointment->email }}</td>

@@ -151,6 +151,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Name: {{ $booking->name }}</h3>
+                                        <p class="card-text">Order id: {{ $booking->order_id }}</p>
                                         <p class="card-text">Product: {{ $booking->product->name_product }}</p>
                                         <p class="card-text">Price: {{ $booking->total_price }} vnd </p>
                                         <p class="card-text">Date: {{ $booking->date_appointment }} <span>Time:

@@ -40,7 +40,7 @@
                                             <td>
                                                 <form id={{ $contact->id }} method="POST" action="{{ route('admin.contact.changeStatus', ['contact' => $contact->id]) }}">
                                                     @csrf
-                                                    <button onclick="myfunction({{ $contact->id }})" type="button" class="btn btn-{{ $contact->status ? 'success' : 'danger' }}" >{{ $contact->status ? 'Complete' : 'Not yet' }}</button>
+                                                    <button onclick="myfunction({{ $contact->id }})" type="button" class="btn btn-{{ $contact->status ? 'success' : 'danger' }}" >{{ $contact->status ? 'Complete' : 'Pending' }}</button>
                                                 </form>
                                             </td>
                                         </tr>

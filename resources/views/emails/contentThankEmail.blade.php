@@ -3,6 +3,7 @@
     <p style="color: #555; line-height: 1.5em;">Thank you for choosing our vaccination service. We hope that you are feeling well and that the {{ $appointment->category->name }} vaccines you received have been effective in keeping you and your loved ones safe and healthy.</p>
     <h3 style="font-weight: bold; color: #333; margin-top: 30px; margin-bottom: 20px;">Order Details:</h3>
     <ul style="list-style: none; padding-left: 0;">
+        <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Order ID:</span> {{ $appointment->order_id }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Name:</span> {{ $appointment->name }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Phone:</span> {{ $appointment->phone }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Age:</span> {{ $appointment->age }}</li>

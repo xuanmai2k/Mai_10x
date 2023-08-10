@@ -40,6 +40,7 @@ class StoreAppointmentRequest extends FormRequest
             'rating' => 'numeric|min:0|max:5',
             'comment'=> 'string|min=1',
             'status_payment'=>'string|max:255',
+            'order_id'=>'integer',
         ];
     }
 

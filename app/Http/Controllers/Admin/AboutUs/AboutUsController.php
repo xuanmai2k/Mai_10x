@@ -28,7 +28,7 @@ class AboutUsController extends Controller
         $url = 'https://api.openai.com/v1/chat/completions';
         $headers = [
             'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer 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' //env('CHATGPT_SECRET_KEY');
+            'Authorization' => 'Bearer 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' //env('CHATGPT_SECRET_KEY');
         ];
 
         $data = [
