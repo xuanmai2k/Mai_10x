@@ -11,7 +11,7 @@
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Doctor:</span> {{ $appointment->doctor->name }}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Nurse:</span> {{ $appointment->nurse->name}}</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Product:</span> {{ $appointment->product->name_product }}</li>
-        <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Price:</span> {{ $appointment->total_price }}$</li>
+        <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Price:</span> {{ $appointment->total_price }}vnd</li>
         <li style="color: #555; margin-bottom: 5px;"><span style="font-weight: bold;">Payment:</span> {{ $appointment->status_payment }}</li>
     </ul>
     <p style="color: #555; line-height: 1.5em;">If you have any questions or concerns about your vaccination or need to schedule an appointment for a second dose, please don't hesitate to contact us. We are happy to help in any way we can.</p>

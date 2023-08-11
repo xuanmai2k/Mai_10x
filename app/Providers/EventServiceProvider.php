@@ -45,7 +45,7 @@ class EventServiceProvider extends ServiceProvider
             SendEmailToDoctorWhenAppointmentSuccess::class,
             SendEmailToNurseWhenAppointmentSuccess::class,
             MinusQuantityProductWhenAppointmentSuccess::class,
-            // SendSmsToCustomerWhenAppointmentSuccess::class,
+            SendSmsToCustomerWhenAppointmentSuccess::class,
         ],
         AppointmentCompleteEvent::class => [
             ChangeStatusWhenAppointmentComplete::class,
